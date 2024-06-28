@@ -14,6 +14,7 @@ import { ActualizarUsuarioComponent } from './usuario/actualizar-usuario/actuali
 import { ListadoClienteComponent } from './cliente/listado-cliente/listado-cliente.component';
 import { FormularioClienteComponent } from './cliente/formulario-cliente/formulario-cliente.component';
 import { ListadoReservaComponent } from './reserva/listado-reserva/listado-reserva.component';
+import { FormularioReservaComponent } from './reserva/formulario-reserva/formulario-reserva.component';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -60,7 +61,8 @@ const MaterialComponents = [
     ActualizarUsuarioComponent,
     ListadoClienteComponent,
     FormularioClienteComponent,
-    ListadoReservaComponent
+    ListadoReservaComponent,
+    FormularioReservaComponent
   ],
   imports: [
     CommonModule,
