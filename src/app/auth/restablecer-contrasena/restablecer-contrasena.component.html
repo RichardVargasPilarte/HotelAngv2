@@ -1,1 +1,30 @@
-<p>restablecer-contrasena works!</p>
+<form [formGroup]="form" (submit)="sendMail()">
+  <mat-card appearance="outlined" class="form-card">
+    <mat-card-content>
+      <h2>Ingrese su correo electrónico</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>Correo electrónico</mat-label>
+        <input type="email" matInput name="email" formControlName="email" />
+
+        @if (form.controls['email'].hasError('required')) {
+        <mat-error>
+          <strong>El email es requerido</strong>
+        </mat-error>
+        } @if (form.controls['email'].hasError('email')) {
+        <mat-error>
+          <strong>El email no es valido</strong>
+        </mat-error>
+        }
+      </mat-form-field>
+      <br />
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Enviar
+      </button>
+    </mat-card-content>
+  </mat-card>
+</form>
