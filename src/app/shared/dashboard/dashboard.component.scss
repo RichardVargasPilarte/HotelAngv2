@@ -1,0 +1,109 @@
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 200px;
+  border-right: none;
+  background: #002b5c;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.mat-mdc-button:not(:disabled) {
+  color: white
+}
+
+// el content maneja la tabla de datos
+.content {
+  margin: 16px;
+  margin-left: 32px;
+  margin-right: 32px;
+  font-size: 1rem;
+  color: black;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+#divMenu {
+  text-align: center;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* CSS for the menu button */
+.mat-mdc-icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+
+/* CSS for the menu content */
+.mat-mdc-menu-panel:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* sdasdasda */
+.custom-dropdown {
+  position: relative;
+  background-color: gray;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border: 1px solid #ccc;
+}
+
+.dropdown-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-options button {
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-options button:hover {
+  background-color: #f0f0f0;
+}
+
+.custom-dropdown button:focus + .dropdown-content,
+.dropdown-content:hover {
+  display: block;
+}
+
+.circle {
+  width: 37px;
+  height: 37px;
+  background: #004a9f;
+  -moz-border-radius: 70px;
+  -webkit-border-radius: 70px;
+  border-radius: 70px;
+  color: #004a9f;
+}

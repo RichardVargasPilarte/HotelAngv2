@@ -1,0 +1,95 @@
+<mat-toolbar class="mat-elevation-z8">
+  @if (sidenav.mode === 'over') {
+  <button mat-icon-button (click)="sidenav.toggle()">
+    @if (!sidenav.opened) {
+    <mat-icon> menu </mat-icon>
+    } @if (sidenav.opened) {
+    <mat-icon> close </mat-icon>
+    }
+  </button>
+  }
+
+  <span> Responsive side navigation </span>
+
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    <button
+      mat-button
+      matTooltip="Menu"
+      class="text-center"
+      [routerLink]="['/app/Menu']"
+    >
+      <span>Menu</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button
+      mat-button
+      matTooltip="Alojamientos"
+      class="menu-button"
+      [routerLink]="['/app/Alojamientos/Listado']"
+    >
+      <mat-icon>home</mat-icon>
+      <span routerLinkActive="active">Alojamientos</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button
+      mat-button
+      matTooltip="Habitaciones"
+      class="menu-button"
+      [routerLink]="['/app/Habitaciones/Listado']"
+    >
+      <mat-icon>bedroom_parent</mat-icon>
+      <span routerLinkActive="active">Habitaciones</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button
+      mat-button
+      matTooltip="Clientes"
+      class="menu-button"
+      [routerLink]="['/app/Clientes/Listado']"
+    >
+      <mat-icon>group</mat-icon>
+      <span routerLinkActive="active">Clientes</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button
+      mat-button
+      matTooltip="Reservas"
+      class="menu-button"
+      [routerLink]="['/app/Reservas/Listado']"
+    >
+      <mat-icon>family_restroom</mat-icon>
+      <span routerLinkActive="active">Reservas</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button
+      mat-button
+      matTooltip="Usuarios"
+      class="menu-button"
+      [routerLink]="['/app/Usuarios/Listado']"
+    >
+      <mat-icon>person</mat-icon>
+      <span routerLinkActive="active">Usuarios</span>
+    </button>
+
+    <mat-divider></mat-divider>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
