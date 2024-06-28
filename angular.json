@@ -40,11 +40,7 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "@angular/material/prebuilt-themes/indigo-pink.css",
-                "bundleName": "indigo-pink-theme",
-                "inject": false
-              },
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
