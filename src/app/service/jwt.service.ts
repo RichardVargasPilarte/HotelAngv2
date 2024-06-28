@@ -98,7 +98,7 @@ export class JwtService {
     const decoded = this.getDecodedToken() as JwtCustomInterface;
     if (decoded?.user_id === 1) return true;
     const userPermissions = this.getUserPermissions()
-    return userPermissions.some((x: number) => permissionIds.includes(x))
+    return userPermissions.some((x) => permissionIds.includes(x))
   }
 
 }
