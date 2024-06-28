@@ -26,7 +26,7 @@ export class WebsocketService {
   private contador = 0;
 
   setsock() {
-    this.socket = new WebSocket(`ws://${ip}/ws/?access=${this.jwt.Token}`);
+    this.socket = new WebSocket(`wss://${ip}/ws/?access=${this.jwt.Token}`);
 
     this.socket.onopen = () => {
       console.log('WebSockets connection created for Socket Service');
