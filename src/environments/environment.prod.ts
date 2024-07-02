@@ -6,5 +6,7 @@ export const environment = {
   API_URI: 'https://hotel-api-v2.onrender.com/api',
   API_Auth: 'https://hotel-api-v2.onrender.com/api/token/',
   Api_Auth_Verify: 'https://hotel-api-v2.onrender.com/api/token/verify/',
+  Api_Password_Reset:'https://hotel-api-v2.onrender.com/api/password_reset/',
+  Api_Password_Reset_Confirm:'https://hotel-api-v2.onrender.com/api/password_reset/confirm/?token',
   APP_name: 'SPA',
 };
