@@ -16,20 +16,13 @@ export class ReestablecerPasswordService {
   public passResetConfirm = 'password_reset/confirm/?token';
 
   constructor(private http: HttpClient) { }
-
-  //base_url = 'http://127.0.0.1:8000/api/password_reset/';
-  //resetPasswordUrl = `http://localhost:8000/api/password_reset/confirm/?token`
-
   sendEmailPassword(email:SendEmail) {
-    //const url = this.base_url;
-    //return this.http.post(url, email );
     const url = `${this.api}/${this.passReset}/`
     return this.http.post(url, email);
   }
 
   resetPassword(token: string, password: string ): Observable<any> {
     const resetData = { token, password };
-    //const apiUrl = `${this.resetPasswordUrl}`;
     const apiUrl = `${this.api}/${this.passResetConfirm}`;
     return this.http.post(apiUrl, resetData);
   }
