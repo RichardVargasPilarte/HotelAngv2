@@ -1,10 +1,10 @@
 export const environment = {
   production: true,
-  API_Domain: 'hotel-api-v2.onrender.com',
+  API_Domain: 'djangorailway-production.up.railway.app',
   API_Port: null,
   API_EndPoint: 'api/',
-  API_URI: 'https://hotel-api-v2.onrender.com/api',
-  API_Auth: 'https://hotel-api-v2.onrender.com/api/token/',
-  Api_Auth_Verify: 'https://hotel-api-v2.onrender.com/api/token/verify/',
+  API_URI: 'https://djangorailway-production.up.railway.app/api',
+  API_Auth: 'https://djangorailway-production.up.railway.app/api/token/',
+  Api_Auth_Verify: 'https://djangorailway-production.up.railway.app/api/token/verify/',
   APP_name: 'SPA',
 };
