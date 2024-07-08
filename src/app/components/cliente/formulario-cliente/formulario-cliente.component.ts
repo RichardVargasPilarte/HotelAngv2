@@ -23,9 +23,7 @@ interface DialogData {
 })
 export class FormularioClienteComponent {
   public clientes = new Cliente();
-  public edit!: boolean;
   subs: Subscription[] = [];
-  public selected = '0';
   public form!: FormGroup;
 
   TipoDocumento: string[] = ['Cedula', 'Pasaporte'];

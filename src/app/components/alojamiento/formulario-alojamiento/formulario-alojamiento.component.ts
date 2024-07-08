@@ -26,9 +26,7 @@ interface DialogData {
 })
 export class FormularioAlojamientoComponent {
   public alojamientos = new Alojamiento();
-  public edit!: boolean;
   subs: Subscription[] = [];
-  public selected = '0';
   public form!: FormGroup;
 
   constructor(

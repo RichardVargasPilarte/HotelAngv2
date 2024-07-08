@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -47,7 +47,8 @@ export class ListadoUsuarioComponent implements OnInit, OnDestroy {
     private grupos$: GruposService,
     public dialog: MatDialog,
     private spinnerService: NgxSpinnerService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    private cdRef: ChangeDetectorRef
   ) {
     this.refUsuarios = this.usuariosServicio.getList();
     this.refGrupos = this.grupos$.getList();
@@ -64,6 +65,7 @@ export class ListadoUsuarioComponent implements OnInit, OnDestroy {
       this.isLoaded = data !== null;
       this.usuarios = data || [];
       this.dataSource = [...this.usuarios];
+      this.cdRef.detectChanges();
       if (this.isLoaded) this.spinnerService.hide();
     });
   }

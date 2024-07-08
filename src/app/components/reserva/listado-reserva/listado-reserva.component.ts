@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -45,7 +45,8 @@ export class ListadoReservaComponent implements OnInit, OnDestroy {
     private reservaService: ReservaService,
     private habitacionservice$: HabitacionService,
     private dialog: MatDialog,
-    private spinnerService: NgxSpinnerService
+    private spinnerService: NgxSpinnerService,
+    private cdRef: ChangeDetectorRef
   ) {
     this.refReserva = this.reservaService.getList();
     this.refHabitacion = this.habitacionservice$.getList();
@@ -117,6 +118,7 @@ export class ListadoReservaComponent implements OnInit, OnDestroy {
       if (!data) data = [];
       this.reservas = data;
       this.dataSource = [...data];
+      this.cdRef.detectChanges();
       if (this.isLoaded) this.spinnerService.hide();
     });
   }

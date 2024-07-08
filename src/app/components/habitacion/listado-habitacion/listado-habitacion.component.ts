@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -54,7 +54,8 @@ export class ListadoHabitacionComponent implements OnInit, OnDestroy {
     private alojamiento$: AlojamientoService,
     private dialog: MatDialog,
     private spinnerService: NgxSpinnerService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    private cdRef: ChangeDetectorRef
   ) {
     this.refHabitacion = this.habitacionservice.getList();
     this.refAlojamiento = this.alojamiento$.getList();
@@ -132,6 +133,7 @@ export class ListadoHabitacionComponent implements OnInit, OnDestroy {
       this.isHabitacionesLoaded = data !== null;
       this.habitaciones = data || [];
       this.dataSource = this.habitaciones;
+      this.cdRef.detectChanges();
       this.checkBothLoaded();
     });
   }

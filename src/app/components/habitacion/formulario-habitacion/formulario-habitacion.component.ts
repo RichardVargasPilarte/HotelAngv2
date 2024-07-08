@@ -30,9 +30,7 @@ interface DialogData {
 export class FormularioHabitacionComponent implements OnInit, OnDestroy {
   public habitaciones: Habitacion = new Habitacion();
   public AlojamientosCargados: Alojamiento[] = [];
-  public edit!: boolean;
   subs: Subscription[] = [];
-  public selected? = '0';
   public form!: FormGroup;
   public refAloajamiento!: Observable<any>;
 

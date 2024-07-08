@@ -33,7 +33,6 @@ export class FormularioReservaComponent implements OnInit, OnDestroy {
   public reserva: Reserva = new Reserva();
   public habitaciones: Habitacion[] = [];
   subs: Subscription[] = [];
-  public selected? = '0';
   public form!: FormGroup;
   public refCliente!: Observable<any>;
   public refHabitacion!: Observable<any>;
