@@ -1,7 +1,7 @@
 <mat-toolbar id="border" class="">
   <span>Habitaciones</span>
   <span class="spacer"></span>
-  @if (hasPermission(permissions.Alojamiento.Create)) {
+  @if (hasPermission(permissions.Habitacion.Create)) {
   <button mat-flat-button color="warn" id="nuevo" (click)="openDialog('c')">
     <span>Nuevo</span>
     <mat-icon>add</mat-icon>

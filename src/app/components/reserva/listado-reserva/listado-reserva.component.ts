@@ -29,7 +29,6 @@ export class ListadoReservaComponent implements OnInit, OnDestroy {
   public dataSource: Reserva[] = [];
   refReserva!: Observable<any[] | null>;
   refHabitacion!: Observable<any[] | null>;
-  socket!: WebSocket;
 
   displayedColumns: string[] = [
     'id',

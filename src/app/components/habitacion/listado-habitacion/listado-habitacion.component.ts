@@ -35,7 +35,6 @@ export class ListadoHabitacionComponent implements OnInit, OnDestroy {
   refAlojamiento!: Observable<any[] | null>;
   private isHabitacionesLoaded = false;
   private isAlojamientosLoaded = false;
-  socket!: WebSocket;
 
   displayedColumns: string[] = [
     'id',

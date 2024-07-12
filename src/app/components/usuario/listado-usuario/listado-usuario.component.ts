@@ -30,7 +30,6 @@ export class ListadoUsuarioComponent implements OnInit, OnDestroy {
   public dataSource: Usuario[] = [];
   refUsuarios!: Observable<any[] | null>;
   refGrupos!: Observable<any[] | null>;
-  socket!: WebSocket;
   displayedColumns: string[] = [
     'id',
     'first_name',
