@@ -39,7 +39,7 @@ const MaterialComponents = [
 
 @NgModule({
   declarations: [DashboardComponent, MenuComponent],
-  imports: [CommonModule, MaterialComponents, RouterModule, NgSelectModule],
-  exports: [MaterialComponents, DashboardComponent, NgSelectModule],
+  imports: [CommonModule, MaterialComponents, RouterModule],
+  exports: [MaterialComponents, DashboardComponent],
 })
 export class SharedModule {}

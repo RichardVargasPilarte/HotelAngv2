@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe  } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { MatLuxonDateModule } from '@angular/material-luxon-adapter';
 
 import { SharedModule } from "../shared/shared.module";
 
@@ -17,6 +19,7 @@ import { ListadoReservaComponent } from './reserva/listado-reserva/listado-reser
 import { FormularioReservaComponent } from './reserva/formulario-reserva/formulario-reserva.component';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -46,7 +49,8 @@ const MaterialComponents = [
   MatFormFieldModule,
   MatSelectModule,
   MatInputModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatLuxonDateModule
 ];
 
 
@@ -71,7 +75,9 @@ const MaterialComponents = [
     NgxSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
+    NgSelectModule
   ],
-  exports: [MaterialComponents, NgxSpinnerModule]
+  providers: [DatePipe],
+  exports: [MaterialComponents, NgxSpinnerModule,NgSelectModule]
 })
 export class ComponentsModule { }

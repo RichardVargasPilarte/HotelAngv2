@@ -29,3 +29,68 @@
 .mdc-text-field--filled {
 background-color: white !important;
 }
+
+
+/* Estilos personalizados para que ng-select se parezca a matInput con appearance="outlined" */
+.ng-select {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.ng-select .ng-select-container {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  font-size: 16px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+
+.ng-select .ng-select-container:hover {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+
+.ng-select.ng-select-focused .ng-select-container {
+  border-color: #3f51b5; /* Mat-Primary Color */
+  box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.25); /* Mat-Primary Color with transparency */
+}
+
+.ng-select .ng-select-container input {
+  padding: 18.5px 0;
+}
+
+.ng-select .ng-placeholder {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 16px;
+}
+
+.ng-select .ng-clear-wrapper {
+  margin-right: 14px;
+}
+
+.ng-select .ng-arrow-wrapper {
+  margin-left: auto;
+}
+
+.ng-select .ng-value-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ng-select .ng-placeholder {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.ng-select .ng-select-container.ng-has-value .ng-placeholder,
+.ng-select .ng-select-container.ng-has-focus .ng-placeholder {
+  top: 0;
+  transform: translateY(-50%) scale(0.75);
+  color: rgba(0, 0, 0, 0.87);
+}
