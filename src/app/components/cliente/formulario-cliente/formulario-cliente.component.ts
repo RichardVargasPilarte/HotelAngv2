@@ -75,11 +75,10 @@ export class FormularioClienteComponent {
         ]),
         telefono: new FormControl(cliente.telefono, [
           Validators.required,
-          Validators.minLength(9),
+          Validators.minLength(8),
         ]),
         tipo_identificacion: new FormControl(cliente.tipo_identificacion, [
           Validators.required,
-          Validators.minLength(9),
         ]),
         num_identificacion: new FormControl(cliente.num_identificacion, [
           Validators.required,

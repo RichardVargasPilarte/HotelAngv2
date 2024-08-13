@@ -51,6 +51,7 @@ export class FormularioReservaComponent implements OnInit, OnDestroy {
   ) {
     this.clientes = this.clienteServicio$.list;
     this.habitaciones = this.habitacionServicio$.list;
+
     this.refCliente = this.clienteServicio$.getList();
     this.refHabitacion = this.habitacionServicio$.getList();
   }
@@ -59,7 +60,12 @@ export class FormularioReservaComponent implements OnInit, OnDestroy {
     const clientsubscribe = this.refCliente.subscribe((clients) => {
       this.clientes = clients;
     });
+    const habitacionsubscribe = this.refHabitacion.subscribe((habts) => {
+      this.habitaciones = habts
+    })
     this.subs.push(clientsubscribe);
+    this.subs.push(habitacionsubscribe);
+
     this.createForm();
   }
 
