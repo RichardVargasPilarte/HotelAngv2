@@ -11,12 +11,15 @@ import { wsModel } from '../models/webSocket.model';
 
 import { IUsuariosResponseDto } from '../dtos/Usuario.dto';
 import { HttpCode } from '../../app/shared/types/httpResponse.types';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UsuarioService extends MainService {
   public override resource = 'usuarios';
+
+  public changePassword = environment.API_URI;
 
   constructor(private httpclient: HttpClient,) {
     super(httpclient);
@@ -72,7 +75,7 @@ export class UsuarioService extends MainService {
 
   changeUserPassword(id: string | number, userPassword: any) {
     const base_url = 'http://127.0.0.1:8000/api/usuarios';
-    const url = `${base_url}/CambiarContrasena/${id}`
+    const url = `${this.changePassword}/usuarios/CambiarContrasena/${id}`
     return this.httpclient.put(url, userPassword);
   }
 
