@@ -13,6 +13,7 @@ import { ChangePassword } from '../../models/usuario.model';
 
 import { JwtService } from '../../service/jwt.service';
 import JwtCustomInterface from '../../models/jwtInterface';
+import { UsuarioService } from '../../service/usuario.service';
 
 @Component({
   selector: 'app-cambio-contrasena',
@@ -25,7 +26,8 @@ export class CambioContrasenaComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<CambioContrasenaComponent>,
-    public jwtService: JwtService
+    public jwtService: JwtService,
+    public usuarioService: UsuarioService
   ) {}
 
   ngOnInit(): void {
@@ -56,10 +58,19 @@ export class CambioContrasenaComponent implements OnInit {
     );
   }
 
-  changePassword(): void {
+  changePassword() {
     let userPassword = new ChangePassword();
     userPassword = Object.assign(userPassword, this.form.value);
-    this.jwtService.logout();
+
+    this. usuarioService.changeUserPassword(userPassword.id, userPassword).subscribe({
+      next: () => {
+        this.dialogRef.close();
+        console.log('Contraseña cambiada con éxito');
+        this.jwtService.logout();
+      },
+      error: (error: any) => console.log('Hubo un error al cambiar la contraseña', error),
+    })
+    //this.jwtService.logout();
   }
 
   MustMatch(controlName: string, matchingControlName: string) {

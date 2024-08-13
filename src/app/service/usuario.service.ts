@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { MainService } from './main.service';
 
-import { CreateUser, Usuario, UserUpdate} from '../models/usuario.model';
+import { CreateUser, Usuario, UserUpdate, ChangePassword} from '../models/usuario.model';
 
 import { wsModel } from '../models/webSocket.model';
 
@@ -19,7 +19,7 @@ import { environment } from '../../environments/environment';
 export class UsuarioService extends MainService {
   public override resource = 'usuarios';
 
-  public changePassword = environment.API_URI;
+  public changePassword = 'https://hotelapi-production.up.railway.app/api/usuarios';
 
   constructor(private httpclient: HttpClient,) {
     super(httpclient);
@@ -73,9 +73,9 @@ export class UsuarioService extends MainService {
     return this.update(body, id);
   }
 
-  changeUserPassword(id: string | number, userPassword: any) {
-    const base_url = 'http://127.0.0.1:8000/api/usuarios';
-    const url = `${this.changePassword}/usuarios/CambiarContrasena/${id}`
+  changeUserPassword(id: string | number, userPassword: ChangePassword) {
+    const base_url = 'https://hotelapi-production.up.railway.app/api/usuarios/CambiarContrasena';
+    const url = `${base_url}/${id}`;
     return this.httpclient.put(url, userPassword);
   }
 
