@@ -12,20 +12,24 @@ import { Observable } from 'rxjs';
 export class ReestablecerPasswordService {
 
   public api = environment.API_URI;
-  public passReset = 'password_reset';
-  public passResetConfirm = 'password_reset/confirm/?token';
+  // public passReset = 'password_reset';
+  // public passResetConfirm = 'password_reset/confirm/?token';
 
   constructor(private http: HttpClient) { }
   sendEmailPassword(email:SendEmail) {
-    const url = 'https://hotelapi-production.up.railway.app/api/password_reset';
-    return this.http.post(url, email);
+    const url = 'https://hotelapi-production.up.railway.app/api';
+    const passReset = 'password_reset/';
+    const urlEmail = `${url}/${passReset}`;
+    return this.http.post(urlEmail, email);
   }
 
   resetPassword(token: string, password: string ): Observable<any> {
     const resetData = { token, password };
-    const apiUrl = 'https://hotelapi-production.up.railway.app/api/password_reset/confirm/?token';
+    const apiUrl = 'https://hotelapi-production.up.railway.app/api';
+    const passResetConfirm = 'password_reset/confirm/?token';
+    const urlChangePassword = `${apiUrl}/${passResetConfirm}`
 
-    return this.http.post(apiUrl, resetData);
+    return this.http.post(urlChangePassword, resetData);
   }
 }
 
