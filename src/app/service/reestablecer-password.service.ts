@@ -17,13 +17,14 @@ export class ReestablecerPasswordService {
 
   constructor(private http: HttpClient) { }
   sendEmailPassword(email:SendEmail) {
-    const url = `${this.api}/${this.passReset}/`
+    const url = 'https://hotelapi-production.up.railway.app/api/password_reset';
     return this.http.post(url, email);
   }
 
   resetPassword(token: string, password: string ): Observable<any> {
     const resetData = { token, password };
-    const apiUrl = `${this.api}/${this.passResetConfirm}`;
+    const apiUrl = 'https://hotelapi-production.up.railway.app/api/password_reset/confirm/?token';
+
     return this.http.post(apiUrl, resetData);
   }
 }
